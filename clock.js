@@ -1,29 +1,70 @@
-var counter = function() {
-  var date = new Date();
-  var seconds = date.getSeconds();
-  var minutes = date.getMinutes();
-  var hours = date.getHours()-12;
+//BEGIN clock counter
 
-  if (seconds.toString().length < 2) {
-    seconds = "0" + seconds;
+var clockCounter = function() {
+  var date = new Date();
+  var hours = date.getHours()-12;
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  
+  if (hours.toString().length < 2) {
+    hours = "0" + hours;
   }
   if (minutes.toString().length < 2) {
     minutes = "0" + minutes;
   }
-  if (hours.toString().length < 2) {
-    hours = "0" + hours;
+  if (seconds.toString().length < 2) {
+    seconds = "0" + seconds;
   }
+  
+  var clock = hours + ":" + minutes + ":" + seconds;
 
-  $(".seconds").text(seconds);
-  $(".minutes").text(minutes);
-  $(".hours").text(hours);
+  $(".clock").text(clock);
 }
 
 
 $(function() {
 
-  counter();
+  clockCounter();
 
-  var intID = setInterval(counter, 1000);
+  var intID = setInterval(clockCounter, 1000);
   
 })
+
+//END clock counter
+
+//BEGIN hex counter
+
+var hexCounter = function() {
+  var date = new Date();
+  var hours = date.getHours()-12;
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  
+  if (hours.toString().length < 2) {
+    hours = "0" + hours;
+  }
+  if (minutes.toString().length < 2) {
+    minutes = "0" + minutes;
+  }
+  if (seconds.toString().length < 2) {
+    seconds = "0" + seconds;
+  }
+
+  var hexClock = "#" + hours + minutes + seconds;
+
+  $(".hexClock").text(hexClock);
+
+  $(".hexBlock").css("background-color", hexClock);
+}
+
+
+$(function() {
+
+  hexCounter();
+
+  var intID = setInterval(hexCounter, 1000);
+  
+})
+
+//END hex counter
+

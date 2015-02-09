@@ -1,29 +1,40 @@
-html {
-  background-color: #333;
+@mixin vertical {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-.clockContainer {
+body {
   font-family: 'Roboto', Arial, sans-serif;
   color: #eee;
+  background-color: #333;
+  margin: 0;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: normal;
+  margin: auto;
+}
+
+.container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
 }
 
-.clockContainer h1 {
-  font-size: 50px;
-  font-weight: normal;
+.clockBlock {
+  @include vertical;
+  height: 200px;
 }
 
-.hours {
-
+.hexBlock {
+  @include vertical;
+  height: 200px;
 }
 
-.minutes {
-
-}
-
-.seconds {
-
-}
