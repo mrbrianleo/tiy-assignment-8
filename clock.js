@@ -2,10 +2,13 @@
 
 var clockCounter = function() {
   var date = new Date();
-  var hours = date.getHours()-12;
+  var hours = date.getHours();
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
   
+  if (hours > 12) {
+    hours - 12;
+  }
   if (hours.toString().length < 2) {
     hours = "0" + hours;
   }
@@ -15,6 +18,7 @@ var clockCounter = function() {
   if (seconds.toString().length < 2) {
     seconds = "0" + seconds;
   }
+
   
   var clock = hours + ":" + minutes + ":" + seconds;
 
@@ -36,10 +40,13 @@ $(function() {
 
 var hexCounter = function() {
   var date = new Date();
-  var hours = date.getHours()-12;
+  var hours = date.getHours();
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
-  
+
+  if (hours > 12) {
+    hours - 12;
+  }
   if (hours.toString().length < 2) {
     hours = "0" + hours;
   }
