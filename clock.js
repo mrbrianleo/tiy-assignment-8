@@ -6,8 +6,11 @@ var clockCounter = function() {
   var minutes = date.getMinutes();
   var seconds = date.getSeconds();
   
-  if (hours > 12) {
-    hours = hours - 12;
+  if (hours === 0) {
+    hours += 12;
+  }
+  if (hours > 12 && hours <24) {
+    hours -= 12;
   }
   if (hours.toString().length < 2) {
     hours = "0" + hours;
